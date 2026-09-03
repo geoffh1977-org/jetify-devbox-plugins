@@ -1,0 +1,56 @@
+---
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+        name: Check YAML
+        description: Validate YAML files.
+      - id: check-json
+        name: Check JSON
+        description: Validate JSON files.
+      - id: check-case-conflict
+        name: Check Case Conflict
+        description: Detect files that would cause case-insensitive conflicts.
+      - id: check-merge-conflict
+        name: Check Merge Conflict
+        description: Detect merge conflict markers in files.
+      - id: detect-private-key
+        name: Detect Private Key
+        description: Prevent committing private keys.
+      - id: check-added-large-files
+        name: Check Added Large Files
+        description: Prevent committing large files.
+      - id: mixed-line-ending
+        name: Mixed Line Ending
+        description: Detect files with mixed line endings.
+      - id: trailing-whitespace
+        name: Trailing Whitespace
+        description: Remove trailing whitespace in files.
+      - id: end-of-file-fixer
+        name: End of File Fixer
+        description: Ensure files end with a newline.
+
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker
+    rev: v3.3.0
+    hooks:
+      - id: editorconfig-checker
+        name: EditorConfig Checker
+        description: Check files against EditorConfig rules.
+
+  - repo: local
+    hooks:
+      - id: shellcheck-local
+        name: ShellCheck
+        entry: bash -c 'shellcheck "$@"'
+        language: system
+        types: [file]
+        files: \.sh$
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.32.0
+    hooks:
+      - id: yamllint
+        name: YAML Lint
+        files: \.ya?ml$

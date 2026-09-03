@@ -1,0 +1,9 @@
+# Gitignore File
+
+# Ignore .envrc as it is mounted
+.envrc
+
+# Ignore Devbox Files
+.devbox/
+devbox.d/
+devbox.lock

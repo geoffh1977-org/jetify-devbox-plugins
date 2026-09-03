@@ -1,0 +1,18 @@
+{
+  "name": "mcp-servers",
+  "description": "Install required packages and install MCP servers",
+  "create_files": {
+    "{{ .DevboxDir }}/check-mcp-servers.sh": "scripts/check-mcp-servers.sh"
+  },
+  "packages": [
+    "jq@latest",
+    "nodejs@20",
+    "uv@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "chmod +x {{ .DevboxDir }}/check-mcp-servers.sh",
+      "if [[ \"$TERM_PROGRAM\" != \"vscode\" ]]; then [[ \"$(basename \"${SHELL}\")\" == \"zsh\" ]] && source {{ .DevboxDir }}/check-mcp-servers.sh; fi"
+    ]
+  }
+}
