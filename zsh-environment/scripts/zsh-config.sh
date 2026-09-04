@@ -5,6 +5,7 @@
 #
 # History options should be set in .zshrc and after oh-my-zsh sourcing.
 export HISTSIZE="1000000"
+export SAVEHIST="1000000"
 export HISTFILE="/home/devbox/.config/zsh/zsh_history"
 mkdir -p "$(dirname "$HISTFILE")"
 
@@ -12,7 +13,7 @@ setopt HIST_FCNTL_LOCK
 
 # Enabled history options
 enabled_opts=(
-  APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_DUPS HIST_IGNORE_SPACE
+  APPEND_HISTORY INC_APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_DUPS HIST_IGNORE_SPACE
   HIST_SAVE_NO_DUPS SHARE_HISTORY
 )
 for opt in "${enabled_opts[@]}"; do
