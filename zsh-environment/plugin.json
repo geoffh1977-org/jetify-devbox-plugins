@@ -9,19 +9,17 @@
     "zsh@latest",
     "zsh-autosuggestions@latest",
     "zsh-syntax-highlighting@latest",
-    "starship@latest",
     "bat@latest",
-    "docker-client@latest",
     "dust@latest",
     "eza@latest",
-    "go-task@latest",
     "less@latest",
     "p7zip@latest",
-    "vim@latest",
     "jq@latest",
+    "starship@latest",
     "tmux@latest",
     "powerline@latest",
-    "powerline-fonts@latest"
+    "powerline-fonts@latest",
+    "vim@latest"
   ],
   "shell": {
     "init_hook": [
